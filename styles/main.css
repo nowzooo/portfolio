@@ -1,0 +1,195 @@
+:root {
+    --ivory: #F3F3EF;
+    --black: #121212;
+    --white: #EEEEEE;
+    --gray:  #626262;
+}
+
+*,
+*::before,
+*::after {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.test_obj {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+  }
+  
+  .test_obj.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* 기본설정 */
+
+.warpper{
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 3%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: var(--ivory);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+input,
+textarea {
+    font: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+
+
+header{
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4.625rem;
+    transition: all 0.3s ease-in-out;
+    z-index: 5;
+
+    font-weight: bold;
+
+
+}
+
+.header--hidden {
+    top: calc(-4.375rem - 2.5rem);
+}
+
+.header_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--ivory);
+    height: 5rem;
+    width: 100%;
+    padding: 0 2%;
+}
+
+.header_brand img{
+    width: 2rem;
+}
+
+
+
+.nav_sub {
+    position: fixed;
+    top: 6.25rem; /* 헤더 높이만큼 내려감 */
+    right: 2%;
+    width: 10%;
+    background: var(--ivory);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    max-height: 0; /* 처음엔 접혀 있음 */
+    transition: max-height 0.4s ease;
+
+  }
+  
+  /* 펼쳐질 때 */
+  .nav_sub.show {
+    max-height: 300px; /* 충분히 큰 값 (내용에 맞게 조절) */
+  }
+  
+  .nav_sub a {
+    padding: 1rem;
+    color: var(--black);
+    text-decoration: none;
+    display: block;
+
+  }
+
+  .nav_sub li{
+    border: 0.5px solid var(--black);
+  }
+  .nav_sub li:nth-child(2){
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .nav_sub a:hover {
+    background: var(--black);
+    color: var(--ivory);
+  }
+
+
+  .top-button {
+    position: fixed;
+    bottom: 1.563rem;
+    right: 1.563rem;
+    width: 4.688rem;
+    height: 4.688rem;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    display: none;
+
+    border: 1px solid var(--ivory);
+    /* 스크롤 시 표시 */
+    z-index: 10;
+    text-align: center;
+    line-height: 4.688rem;
+}
+
+.top-button:hover {
+    background-color: var(--black);
+    /* 버튼 호버 시 색상 */
+}
+
+
+.main{
+    margin-top: 12.875rem;
+  }
+
+
+ 
